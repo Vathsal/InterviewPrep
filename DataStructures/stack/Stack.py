@@ -1,5 +1,5 @@
 """
-	STACK IMPLEMENTATION 
+	STACK IMPLEMENTATION using List 
 """
 
 class Stack :
@@ -13,10 +13,12 @@ class Stack :
 		return self.items.pop()
 
 	def peek(self):
-	 	return self.items[len(self.items)-1]
+	 	return self.items[-1]
+	 	#return self.items[len(self.items)-1]
 
 	def size(self):
 		return len(self.items)
 
 	def isEmpty(self):
-		return self.items == []
+		return len(self.items) == 0
+		# return self.items == []
