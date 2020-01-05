@@ -5,6 +5,7 @@
 from stack.StackImplLinkedList import StackImplLinkedList
 from stack.StackImplArray import StackImplArray
 from queue.QueueImplArray import QueueImplArray
+from queue.QueueImplLinkedList import QueueImplLinkedList
 from deque.Deque import Deque
 
 """
@@ -38,9 +39,7 @@ s2.push(15.4)
 print("pop     : ", s2.pop())
 print("pop     : ", s2.pop())
 
-
-"""
-#------ Queue Test
+#------ Queue : Array 
 
 q=QueueImplArray()
 
@@ -54,6 +53,20 @@ print("Deque   : ", q.dequeue())
 print("isEmpty : ", q.isEmpty())
 
 """
+#------ Queue : LinkedList 
+
+q= QueueImplLinkedList()
+
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.enqueue(4)
+q.enqueue(5)
+print("Deque   : ", q.dequeue())
+print("isEmpty : ", q.isEmpty())
+
+"""
+
 d=Deque()
 print(d.isEmpty())
 d.addRear(4)
@@ -65,4 +78,5 @@ print(d.isEmpty())
 d.addRear(8.4)
 print(d.removeRear())
 print(d.removeFront())
+
 """

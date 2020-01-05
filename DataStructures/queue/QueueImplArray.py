@@ -1,5 +1,5 @@
 """
-	QUEUE Implementation using LISTS 
+	QUEUE Implementation using Array (i.e LIST in python) 
 	This implementation assumes that the rear is at position 0 in the list. 
 		ENQUEUE : add item at position 0. 		T = O(n)
 		DEQUE   : remove item from position n. 	T = O(1)
