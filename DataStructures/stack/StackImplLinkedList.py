@@ -22,17 +22,13 @@ class StackImplLinkedList :
 	def pop(self):
 		if self.isEmpty():
 			raise Exception("Stack is empty")
-
 		value = self.head.value
-
 		self.head = self.head.nextNode
-
 		return value
 
 	def peek(self):
 		if self.isEmpty():
 			raise Exception("Stack is empty")
-
 		return self.head.value
 
 	# def size(self):
