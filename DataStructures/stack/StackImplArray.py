@@ -1,5 +1,5 @@
 """
-	STACK IMPLEMENTATION using Array (i.e LIST in python) 
+	STACK Implementation using Array (i.e LIST in python) 
 """
 
 class StackImplArray :

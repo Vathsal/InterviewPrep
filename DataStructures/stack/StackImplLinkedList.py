@@ -1,6 +1,7 @@
 """
 	STACK Implementation using LinkedList 
 """
+
 class Node :
 	def __init__(self, value, nextNode = None):
 		self.value = value
@@ -17,8 +18,9 @@ class StackImplLinkedList :
 		nextNode = self.head
 		self.head = Node(value, nextNode) 
 
-	# 1. Extract the value and return it 
-	# 2. Assign nextNode to the head 
+	# 1. Save the value that you need to return
+	# 2. Delete the first node and assign nextNode to head
+	# 3. Return the saved value  
 	def pop(self):
 		if self.isEmpty():
 			raise Exception("Stack is empty")

@@ -1,12 +1,13 @@
 """
-MAIN PROGRAM 
+	MAIN PROGRAM 
 """
 
 from stack.StackImplLinkedList import StackImplLinkedList
 from stack.StackImplArray import StackImplArray
-from queue.Queue import Queue
+from queue.QueueImplArray import QueueImplArray
 from deque.Deque import Deque
 
+"""
 #------ Stack : Array 
 
 s1 = StackImplArray()
@@ -41,21 +42,24 @@ print("pop     : ", s2.pop())
 """
 #------ Queue Test
 
-q=Queue()
+q=QueueImplArray()
 
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
 q.enqueue(4)
-q.enqueue('dog')
-q.enqueue(True)
-print(q.size())
-print(q.dequeue())
+q.enqueue(5)
+print("Size    : ", q.size())
+print("Deque   : ", q.dequeue())
+print("isEmpty : ", q.isEmpty())
 
-
+"""
 d=Deque()
 print(d.isEmpty())
 d.addRear(4)
 d.addRear('dog')
 d.addFront('cat')
-d.addFront(True)
+d.addFront(True) 
 print(d.size())
 print(d.isEmpty())
 d.addRear(8.4)
