@@ -1,8 +1,8 @@
 """
-	STACK IMPLEMENTATION using List 
+	STACK IMPLEMENTATION using Array (i.e LIST in python) 
 """
 
-class Stack :
+class StackImplArray :
 	def __init__(self):
 		self.items =[]
 
