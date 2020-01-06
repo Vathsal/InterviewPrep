@@ -3,8 +3,8 @@
 		1. Max_heap 
 		2. Min_heap
 """
-from heap.max_heap import max_heap
-from heap.min_heap import min_heap
+from heap.MaxHeapImplArray import MaxHeapImplArray
+from heap.MinHeapImplArray import MinHeapImplArray
 import random
 
 values = random.sample(range(100), 10)
@@ -12,7 +12,7 @@ print("Input array : ")
 print(values)
 
 print("Max Heap Implementation using Array : ")
-h1 = max_heap()
+h1 = MaxHeapImplArray()
 for v in values :
 	h1.push(v)
 
@@ -23,7 +23,7 @@ print()
 
 
 print("Min Heap Implementation using Array : ")
-h2 = min_heap()
+h2 = MinHeapImplArray()
 for v in values :
 	h2.push(v)
 

@@ -1,7 +1,7 @@
 """
 	This is an implementation for min_heap which is implmented using python LIST
 """
-class min_heap:
+class MinHeapImplArray:
 	def __init__(self):
 		self.heap = []
 

@@ -1,7 +1,7 @@
 """
 	This is an implementation for max_heap which is implmented using python LIST
 """
-class max_heap:
+class MaxHeapImplArray:
 	def __init__(self):
 		self.heap = []
 
