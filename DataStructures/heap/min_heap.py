@@ -1,7 +1,7 @@
 """
-	This is an implementation for max_heap which is implmented using python LIST
+	This is an implementation for min_heap which is implmented using python LIST
 """
-class max_heap:
+class min_heap:
 	def __init__(self):
 		self.heap = []
 
@@ -11,24 +11,24 @@ class max_heap:
 	def len(self): 
 		return len(self.heap)
 
-	# Insert a key into the max_heap
+	# Insert a key into the min_heap
 	def push(self, value): 
 		self.heap.append(value)		
 		_sift_up(self.heap, len(self.heap)-1)
 
-	# Return the largest key from the max_heap
+	# Return the smallest key from the min_heap
 	def peek(self): 
 		return self.heap[0]
 
-	# Return and remove the largest key from the max_heap
+	# Return and remove the smallest key from the min_heap
 	def pop(self): 
 		if self.is_empty() :
 			raise Exception("Heap is empty !")
 
 		swap(self.heap, 0, len(self.heap)-1)
-		max_value = self.heap.pop()
+		min_value = self.heap.pop()
 		_sift_down(self.heap, 0)
-		return max_value 
+		return min_value 
 
 def swap(myArray,i,j):
 	myArray[i], myArray[j] = myArray[j], myArray[i]
@@ -39,10 +39,10 @@ def _sift_up(heap, current_index):
 	if parent_index < 0 :
 		return 
 
-	# If the current node is larger than the parent node :
+	# If the current node is smaller than the parent node :
 	# 	1. Swap the current node and parent node
 	# 	2. Repeat by moving up until you restore the heap order
-	if heap[current_index] > heap[parent_index]:
+	if heap[current_index] < heap[parent_index]:
 		swap(heap, current_index, parent_index)
 		_sift_up(heap, parent_index)
 
@@ -54,17 +54,17 @@ def _sift_down(heap, current_index):
 	if child_index >= len(heap):
 		return
 
-	# If both the children are present and the parent is smaller than both children :
-	# 	1. Swap the current node with the LARGER of the child nodes 
+	# If both the children are present and the parent is larger than both children :
+	# 	1. Swap the current node with the SMALLER of the child nodes 
 	# 	2. Repeat by moving down until you restore the heap order
-	# If only one child is present and the parent is smaller than the child :
+	# If only one child is present and the parent is larger than the child :
 	# 	1. Swap the current node with the child node 
 	# 	2. Repeat by moving up until you restore the heap order
 
-	# Check if the right child is larger, if so assign that that the child to be swapped. 
-	if child_index+1 < len(heap) and heap[child_index+1] > heap[child_index]:
+	# Check if the right child is smaller, if so assign that that the child to be swapped. 
+	if child_index+1 < len(heap) and heap[child_index+1] < heap[child_index]:
 		child_index += 1 
 
-	if heap[child_index] > heap[current_index]:
+	if heap[child_index] < heap[current_index]:
 		swap(heap, current_index, child_index)
 		_sift_down(heap, child_index)
