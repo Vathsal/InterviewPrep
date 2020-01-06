@@ -1,5 +1,7 @@
 """
-	MAIN PROGRAM 
+	Main Program for Heap Implementation :
+		1. Max_heap 
+		2. Min_heap
 """
 from heap.max_heap import max_heap
 from heap.min_heap import min_heap
