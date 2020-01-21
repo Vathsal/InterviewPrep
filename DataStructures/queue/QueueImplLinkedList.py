@@ -15,16 +15,13 @@ class QueueImplLinkedList:
 		self.tail = None
 
 	def enqueue(self,item):
-		value = item
-		nextNode = self.head
-
 		if self.head is None:
-			self.head = Node(value, nextNode)
+			self.head = Node(item, self.head)
 			self.tail = self.head
 			return 
 
-		self.tail.nextNode = Node(value, nextNode)
-		self.tail = Node(value, nextNode)
+		self.tail.nextNode = Node(item, self.head)
+		self.tail = self.tail.nextNode
 
 	def dequeue(self):
 		if self.isEmpty():
@@ -37,11 +34,5 @@ class QueueImplLinkedList:
 
 		return value
 
-	# def size():
-		# TODO 
-
 	def isEmpty(self):
 		return self.head is None
-
-
-
