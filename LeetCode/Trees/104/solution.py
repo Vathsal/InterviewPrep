@@ -1,13 +1,13 @@
 """
 1. DATA STRUCTURES USED ?
-    NA
+    STACK
 2. TYPE OF PROBLEM PATTERN ?
-    Tree
+    DFS
 3. EDGE CASES / BASE CASE ?
     NA
-4. COMPLEXITY :
+4. COMPLEXITY : (RECURSIVE & ITERATIVE) 
     a. T=O(N)
-    b. S=O(1)
+    b. S(worst)=O(N), S(best)= O(logN)
 5. SOLUTION :
     DFS - Preorder traversal - a. Recursive
                                b. Iterative
@@ -19,7 +19,11 @@
 #         self.left = None
 #         self.right = None
 
-# RECURSIVE SOLUTION 
+#------------------------------------------------
+# Q. Given a binary tree, find its maximum depth.
+#------------------------------------------------
+
+# ITERATIVE SOLUTION 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         max_depth = 0 
@@ -38,7 +42,7 @@ class Solution:
         
         return max_depth
 
-# ITERATIVE SOLUTION 
+# RECURSIVE SOLUTION 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         max_depth = 0 
@@ -52,10 +56,10 @@ class Solution:
         
         return max_depth + max(left_tree_depth, right_tree_depth)
 
-# ITERATIVE SOLUTION - Optimized
+# RECURSIVE SOLUTION - Optimized
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:  
         if root is None :
-            return max_depth 
+            return 0 
 
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))

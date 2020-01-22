@@ -1,13 +1,13 @@
 """
 1. DATA STRUCTURES USED ?
-    NA
+    STACK
 2. TYPE OF PROBLEM PATTERN ?
-    Tree
+    DFS
 3. EDGE CASES / BASE CASE ?
     NA
-4. COMPLEXITY :
+4. COMPLEXITY : (RECURSIVE & ITERATIVE) 
     a. T=O(N)
-    b. S=O(1)
+a
 5. SOLUTION :
     DFS - Preorder traversal - a. Recursive
                                b. Iterative
@@ -19,6 +19,30 @@
 #         self.left = None
 #         self.right = None
 
+#------------------------------------------------
+# Q. Given a binary tree, find its minimum depth.
+#------------------------------------------------
+
+# ITERATIVE SOLUTION 
+class Solution:
+    def minDepth(self, root: TreeNode) -> int:
+        min_depth = float('inf')
+        
+        if root is None:
+            return 0
+        
+        temp_stack = [(root, 1)]
+        while temp_stack:
+            curr_node, curr_depth = temp_stack.pop()
+            if curr_node:
+                temp_stack.append((curr_node.left, curr_depth+1))
+                temp_stack.append((curr_node.right, curr_depth+1))
+                if curr_node.left is None and curr_node.right is None :
+                    min_depth = min(min_depth, curr_depth)
+                    
+        return min_depth
+
+# RECURSIVE SOLUTION 
 class Solution:
     def minDepth(self, root: TreeNode) -> int:
         min_depth = 0 
