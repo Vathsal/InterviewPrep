@@ -19,6 +19,7 @@
 #         self.left = None
 #         self.right = None
 
+# RECURSIVE SOLUTION 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         max_depth = 0 
@@ -26,14 +27,6 @@ class Solution:
         if root is None :
             return max_depth 
         
-        # ITERATIVE SOLUTION 
-        # max_depth = 1 
-        # left_tree_depth = self.maxDepth(root.left)
-        # right_tree_depth = self.maxDepth(root.right)
-        #
-        # return max_depth + max(left_tree_depth, right_tree_depth)
-        
-        # RECURSIVE SOLUTION 
         temp_stack = [(root, 1)]
         
         while temp_stack :
@@ -44,3 +37,25 @@ class Solution:
                 max_depth = max(max_depth, curr_depth)
         
         return max_depth
+
+# ITERATIVE SOLUTION 
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        max_depth = 0 
+        
+        if root is None :
+            return max_depth 
+        
+        max_depth = 1 
+        left_tree_depth = self.maxDepth(root.left)
+        right_tree_depth = self.maxDepth(root.right)
+        
+        return max_depth + max(left_tree_depth, right_tree_depth)
+
+# ITERATIVE SOLUTION - Optimized
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:  
+        if root is None :
+            return max_depth 
+
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
