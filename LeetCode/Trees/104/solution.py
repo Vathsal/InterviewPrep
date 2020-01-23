@@ -45,16 +45,13 @@ class Solution:
 # RECURSIVE SOLUTION 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        max_depth = 0 
-        
         if root is None :
-            return max_depth 
+            return 0 
         
-        max_depth = 1 
         left_tree_depth = self.maxDepth(root.left)
         right_tree_depth = self.maxDepth(root.right)
         
-        return max_depth + max(left_tree_depth, right_tree_depth)
+        return 1 + max(left_tree_depth, right_tree_depth)
 
 # RECURSIVE SOLUTION - Optimized
 class Solution:
