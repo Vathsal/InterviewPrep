@@ -36,8 +36,8 @@ class Solution:
         while temp_stack :
             curr_node, curr_depth = temp_stack.pop()
             if curr_node :
-                temp_stack.append((curr_node.right, curr_depth+1))
                 temp_stack.append((curr_node.left, curr_depth+1))
+                temp_stack.append((curr_node.right, curr_depth+1))
                 max_depth = max(max_depth, curr_depth)
         
         return max_depth
