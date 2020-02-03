@@ -2,7 +2,7 @@
 #------------------------------------------------
 # MERGE SORT
 #------------------------------------------------
-
+import random
 def merge_sort(input_list) :
     N = len(input_list)
     if N<=1 :
@@ -45,7 +45,14 @@ def merge_sorted_lists(input_list1, input_list2) :
         return result_list
 
 # main program 
-input_list = [54,26,93,17,77,31,44,55,20]
-print("Unsorted Array : ", input_list)
+
+#input_list = [54,26,93,17,77,31,44,55,20]
+#print("Unsorted Array : ", input_list)
+#output_list = merge_sort(input_list)
+#print("Sorted Array   : ", output_list)
+
+input_list = random.sample(range(0, 1000000), 1000000)
 output_list = merge_sort(input_list)
-print("Sorted Array   : ", output_list)
+f = open("merge_sort_result.txt", 'w')
+f.write(str(output_list))
+f.close()

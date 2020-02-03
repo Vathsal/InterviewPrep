@@ -2,11 +2,10 @@
 #------------------------------------------------
 # BUBBLE SORT
 #------------------------------------------------
-
+import random 
 # Without swap counter
 def bubble_sort_1(input_list) :
-    N = len(input_list)
-    
+    N = len(input_list) 
     if N <=1 :
         return input_list
     else :
@@ -14,14 +13,12 @@ def bubble_sort_1(input_list) :
             for j in range(N-i-1) :
                 if input_list[j] > input_list[j+1] :
                     input_list[j], input_list[j+1] = input_list[j+1],input_list[j]
-    
     return input_list
 
 # With swap counter
 def bubble_sort_2(input_list) :
     N = len(input_list)
     swap_counter = -1
-    
     if N <=1 :
         return input_list
     else :
@@ -32,16 +29,29 @@ def bubble_sort_2(input_list) :
                     if input_list[j] > input_list[j+1] :
                         input_list[j], input_list[j+1] = input_list[j+1],input_list[j]
                         swap_counter += 1
-    
     return input_list
 
 # main program 
-input_list_1 = [54,26,93,17,77,31,44,55,20]
-print("Unsorted Array : ", input_list_1)
-bubble_sort_1(input_list_1)
-print("Sorted Array   : ", input_list_1)
+#input_list_1 = [54,26,93,17,77,31,44,55,20]
+#print("Unsorted Array : ", input_list_1)
+#bubble_sort_1(input_list_1)
+#print("Sorted Array   : ", input_list_1)
+#
+#input_list_2 = [54,26,93,17,77,31,44,55,20]
+#print("Unsorted Array : ", input_list_2)
+#bubble_sort_2(input_list_2)
+#print("Sorted Array   : ", input_list_2)
 
-input_list_2 = [54,26,93,17,77,31,44,55,20]
-print("Unsorted Array : ", input_list_2)
+input_list_1 = random.sample(range(0, 1000000), 10000)
+bubble_sort_1(input_list_1)
+f = open("bubble_sort_1_result.txt", 'w')
+f.write(str(input_list_1))
+f.close()
+
+"""
+input_list_2 = random.sample(range(0, 1000000), 1000000)
 bubble_sort_2(input_list_2)
-print("Sorted Array   : ", input_list_2)
+f = open("bubble_sort_2_result.txt", 'w')
+f.write(str(input_list_2))
+f.close()
+"""

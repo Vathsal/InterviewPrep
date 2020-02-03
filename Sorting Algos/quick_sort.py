@@ -1,8 +1,9 @@
 
 #------------------------------------------------
 # QUICK SORT
+# last element is chosen as pivot 
 #------------------------------------------------
-
+import random 
 def quick_sort(input_list) :
 	N = len(input_list)
 	if N<=1 :
@@ -29,7 +30,14 @@ def partition(input_list, sp, ep):
     return follower
 
 # main program 
-input_list = [54,26,93,17,77,31,44,55,20]
-print("Unsorted Array : ", input_list)
+
+#input_list = [54,26,93,17,77,31,44,55,20]
+#print("Unsorted Array : ", input_list)
+#quick_sort(input_list)
+#print("Sorted Array   : ", input_list)
+
+input_list = random.sample(range(0, 1000000), 1000000)
 quick_sort(input_list)
-print("Sorted Array   : ", input_list)
+f = open("quick_sort_result.txt", 'w')
+f.write(str(input_list))
+f.close()
